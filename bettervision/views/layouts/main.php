@@ -40,8 +40,18 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Eventos', 'url' => ['/sensor-logs/index']],
-            ['label' => 'Sensores', 'url' => ['/sensor/index']],
+
+           // ['label' => 'Eventos', 'url' => ['/sensor-logs/index']],
+           // ['label' => 'Sensores', 'url' => ['/sensor/index']],
+
+           !Yii::$app->user->isGuest ? (
+            ['label' => 'Eventos', 'url' => ['/sensor-logs/index']]
+           ):(''),
+
+           !Yii::$app->user->isGuest ? (
+            ['label' => 'Sensores', 'url' => ['/sensor/index']]
+           ):(''),
+           
             Yii::$app->user->isGuest
                 ? ['label' => 'Login', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
