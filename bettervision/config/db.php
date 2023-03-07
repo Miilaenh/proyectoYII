@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=techno11_bettervision',
-    'username' => 'techno11_admin01',
-    'password' => '51D=fX8X=R0V',
+    'dsn' => 'mysql:host=localhost;dbname=bettervision',
+    'username' => 'root',
+    'password' => '',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)

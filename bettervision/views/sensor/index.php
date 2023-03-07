@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\SensorSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Sensors';
+$this->title = 'Sensores';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sensor-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Sensor', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Sensor', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -28,10 +28,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'nombre',
-            'estado:boolean',
+                //'estado',
+                [
+                    'attribute' => 'estado',
+                    'format' => 'raw',
+                    'value' => function ($estado0) {
+                        return $estado0->getState($estado0->estado);
+               },
+            ],
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Sensor $model, $key, $index, $column) {

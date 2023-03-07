@@ -44,6 +44,7 @@ class SensorController extends Controller
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'estado0' => $searchModel->getState($searchModel->estado),
         ]);
     }
 

@@ -67,4 +67,11 @@ class Sensor extends \yii\db\ActiveRecord
     {
         return $this->hasMany(UsuarioSensor::class, ['id_sensor' => 'id']);
     }
+    public function getState($state)
+    {  
+        if($state == '1')
+            return "Encendido";
+        else
+            return "Apagado";
+    }
 }

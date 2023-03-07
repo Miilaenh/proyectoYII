@@ -10,26 +10,17 @@ use yii\grid\GridView;
 /** @var app\models\SensorLogsSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Sensor Logs';
+$this->title = 'Eventos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sensor-logs-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Create Sensor Logs', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'id_sensor',
             'evento',
             'fecha_del_evento',

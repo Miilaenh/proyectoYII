@@ -39,11 +39,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/sensor/index']],
-            ['label' => 'About', 'url' => ['/sensor/about']],
-            ['label' => 'Contact', 'url' => ['/sensor/contact']],
+            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Eventos', 'url' => ['/sensor-logs/index']],
+            ['label' => 'Sensores', 'url' => ['/sensor/index']],
             Yii::$app->user->isGuest
-                ? ['label' => 'Login', 'url' => ['/sensor/login']]
+                ? ['label' => 'Login', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
                     . Html::beginForm(['/site/logout'])
                     . Html::submitButton(
